@@ -1,2 +1,2 @@
-*.map
-/styles/sass/*.css
+src/sass/*.map
+src/sass/*.css
