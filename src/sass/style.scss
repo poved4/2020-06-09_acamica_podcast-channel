@@ -1,0 +1,154 @@
+/* Variables */
+$clr-dark: #060a24;
+$clr-light: #ffffff;
+$clr-blue: #0000fe;
+$clr-teal: #00f3bb;
+$font-sans: "IBM Plex Sans", sans-serif;
+$font-mono: "IBM Plex Mono", monospace;
+
+/* CSS Custom Properties */
+:root {
+    --clr-dark: #{$clr-dark};
+    --clr-light: #{$clr-light};
+    --clr-blue: #{$clr-blue};
+    --clr-teal: #{$clr-teal};
+    --font-sans: #{$font-sans};
+    --font-mono: #{$font-mono};
+}
+
+@font-face {
+    font-family: 'IBM Plex Sans';
+    src: url('/assets/fonts/IBMPlexSans-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IBM Plex Mono';
+    src: url('/assets/fonts/IBMPlexMono-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IBM Plex Mono';
+    src: url('/assets/fonts/IBMPlexMono-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Reseteo y Base */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--clr-dark) !important;
+    font-family: var(--font-sans);
+    overflow-x: hidden; /* Previene scroll horizontal indeseado */
+}
+
+/* Tipografía Utilitaria */
+.font-mono {
+
+    font-family: var(--font-mono);
+
+    &-medium {
+        font-weight: 500;
+    }
+
+}
+
+/* Colores Personalizados extendiendo Bootstrap */
+.text-blue {
+    color: var(--clr-blue);
+}
+
+.bg-blue {
+    background-color: var(--clr-blue);
+}
+
+/* Componentes Visuales Propios */
+.brand-icon {
+    height: 2.3rem;
+    width: auto;
+}
+
+.anim-grow {
+
+    transition: transform 0.3s ease;
+
+    &:hover,
+    &:focus {
+        transform: scale(1.15);
+    }
+
+}
+
+/* Botón Custom */
+.btn-custom {
+
+    color: var(--clr-dark) !important;
+    background-color: var(--clr-teal) !important;
+    transition: all 0.4s ease !important;
+
+    &:hover,
+    &:focus {
+        color: var(--clr-light) !important;
+        background-image: linear-gradient(225deg, var(--clr-blue) 0%, var(--clr-teal) 100%) !important;
+    }
+
+}
+
+/* Clip Paths (Formas geométricas) */
+.cutout {
+
+    &-parallelogram {
+        clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+        background-image: linear-gradient(225deg, #0000ff 0%, #0000a3 100%);
+    }
+
+    &-top-left {
+        clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+    }
+
+}
+
+/* Ajustes específicos Navbar */
+.navbar-collapse {
+
+    @media (max-width: 767px) {
+        background-color: var(--clr-blue);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100vw;
+        padding: 1rem 0;
+        z-index: 1000;
+    }
+
+}
+
+.navbar-nav {
+    .nav-link {
+
+        color: var(--clr-dark);
+        font-family: var(--font-mono);
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: var(--clr-teal);
+            text-decoration: line-through;
+        }
+
+        @media (max-width: 767px) {
+            color: var(--clr-light);
+            text-align: center;
+            padding: 0.75rem 0;
+        }
+
+    }
+}
